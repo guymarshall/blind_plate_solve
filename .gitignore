@@ -1,0 +1,14 @@
+# DEV
+/target
+/.vscode
+
+# IMAGES
+*.fit
+*.fits
+*.tif
+*.tiff
+*.png
+
+# JUST FOR TESTING
+test_file_path.txt
+test_files_directory.txt
