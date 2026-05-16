@@ -30,7 +30,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     match extension {
         "fits" => {
             // get image dimensions
-            let dimensions: Dimensions = fits_reader::get_image_dimensions(&test_file_path)?;
+            let dimensions: Dimensions = fits_reader::get_image_dimensions(&file_path)?;
             println!("{:?}", dimensions);
         }
         "fit" => {
