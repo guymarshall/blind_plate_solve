@@ -18,9 +18,9 @@ use crate::dimensions::Dimensions;
 fn main() -> Result<(), Box<dyn Error>> {
     // TODO REMOVE: get test file path
     let buffer: Vec<u8> = fs::read("test_file_path.txt")?;
-    let test_file_path: String = String::from_utf8(buffer)?.trim().to_string();
+    let file_path: String = String::from_utf8(buffer)?.trim().to_string();
 
-    let extension: &str = Path::new(&test_file_path)
+    let extension: &str = Path::new(&file_path)
         .extension()
         .and_then(OsStr::to_str)
         .unwrap();
