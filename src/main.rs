@@ -213,10 +213,33 @@ fn main() -> Result<(), Box<dyn Error>> {
         .and_then(OsStr::to_str)
         .unwrap();
 
-    let image: Image = get_image_data(&file_path)?;
-    println!("{:?}", image);
-    let stars: Vec<Star> = extract_stars(&image);
-    println!("Found {} stars (placeholder)", stars.len());
+    // TODO: merge all readers into one reader
+    match extension {
+        "fits" => {
+            let image: Image = get_image_data(&file_path)?;
+            println!("{:?}", image);
+            let stars: Vec<Star> = extract_stars(&image);
+            println!("Found {} stars (placeholder)", stars.len());
+        }
+        "fit" => {
+            // TODO: add FitReader for .fit files
+            todo!()
+        }
+        "tif" => {
+            // TODO: add TifReader for .tif files
+            todo!()
+        }
+        "tifs" => {
+            // TODO: add TifsReader for .tifs files
+            todo!()
+        }
+        "png" => {
+            // TODO: add PngReader for .png files
+            todo!()
+        }
+        _ => panic!("Invalid file extension."),
+    }
+
     Ok(())
 
     // identify stars
